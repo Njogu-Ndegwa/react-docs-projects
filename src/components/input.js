@@ -1,26 +1,24 @@
 import React from 'react';
-import {ScaleName} from '../utils';
+import { ScaleName } from '../utils';
 
-export default class TemparatureInput extends React.Component {
+export default function TemparatureInput({ scale, temparature, onTemparatureChange }) {
 
 
-    handleChange = (e) => {
+    const handleChange = (e) => {
         e.preventDefault()
-        this.props.onTemparatureChange(e.target.value)
+        onTemparatureChange(e.target.value)
     }
 
-    render() {
-        const {scale, temparature} = this.props;
-        return (
-            <>
-                <fieldset>
-        <legend>Enter the temparature in {ScaleName[scale]}</legend>
-                    <input
-                        value={temparature}
-                        onChange={this.handleChange} />
-                </fieldset>
-                
-            </>
-        )
-    }
+
+    return (
+        <>
+            <fieldset>
+                <legend>Enter the temparature in {ScaleName[scale]}</legend>
+                <input
+                    value={temparature}
+                    onChange={handleChange} />
+            </fieldset>
+
+        </>
+    );
 }
