@@ -1,10 +1,10 @@
 import React from 'react';
-import BoilingVerdict from './components/boiling_verdict';
+import TemparatureInput from './components/input';
 
 
 function App() {
   return (
-    <BoilingVerdict/>
+    <TemparatureInput/>
   );
 }
 
