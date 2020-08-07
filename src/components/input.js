@@ -1,28 +1,25 @@
 import React from 'react';
-import BoilingVerdict from './boiling_verdict';
+import {ScaleName} from '../utils';
+
 export default class TemparatureInput extends React.Component {
-    state = {
-        temparature: ''
-    }
+
 
     handleChange = (e) => {
         e.preventDefault()
-        this.setState({ temparature: e.target.value })
+        this.props.onTemparatureChange(e.target.value)
     }
 
     render() {
-        const { temparature } = this.state;
+        const {scale, temparature} = this.props;
         return (
             <>
                 <fieldset>
-                    <legend>Enter the temparature in Celcius</legend>
+        <legend>Enter the temparature in {ScaleName[scale]}</legend>
                     <input
                         value={temparature}
                         onChange={this.handleChange} />
                 </fieldset>
-                <BoilingVerdict
-                    temparature={temparature}
-                />
+                
             </>
         )
     }

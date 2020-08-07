@@ -1,10 +1,10 @@
 import React from 'react';
-import TemparatureInput from './components/input';
+import Calculator from './components/Calculator';
 
 
 function App() {
   return (
-    <TemparatureInput/>
+    <Calculator/>
   );
 }
 
